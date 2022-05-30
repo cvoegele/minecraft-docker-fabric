@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  mc_0:
+    image: itzg/minecraft-server
+    ports:
+      - 25565:25565
+    environment:
+      EULA: "TRUE"
+      TYPE: "FABRIC"
+      FABRIC_LAUNCHER: "server/fabric-server-launch.jar"
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    volumes:
+      - ./data:/data
